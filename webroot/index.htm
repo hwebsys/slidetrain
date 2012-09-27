@@ -22,6 +22,7 @@
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/bootstrap-responsive.min"></script>
+		<script src="js/top.js"></script>
 	</head>
 	<body>
 		<div id="header" class="navbar navbar-fixed-top">
@@ -49,11 +50,27 @@
 		<div class="container" style="margin-top:50px;">
 			<div class="row">
 				<div class="span8" id="main">
-					<h1>Hello, world!</h1>
-					<p>ほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげ</p>
+					<h1>Checking Slides!</h1>
+					<ul>
+						<li id="slide1">
+							<span class="close">x</span>
+							<a target="_blank" title="5 Reasons Why Social Media Was Born For SMEs" href="http://www.slideshare.net/tomorrow_people/5-reasons-why-social-media-was-born-for-sm-es" class="notranslate doctitle ga-track-featured_slideshow">
+								<span class="imgWrapper"><img class="notranslate" width="120" alt="5 Reasons Why Social Media Was Born For SMEs" src="//cdn.slidesharecdn.com/ss_thumbnails/5reasonswhysocialmediawasbornforsmes-120925085917-phpapp02-thumbnail-2.jpg?1348649444"></span>
+								<span class="notranslate">5 Reasons Why Social Media Was Bor…</span>
+							</a>
+						</li>
+						<li id="slide2">
+							<span class="close">x</span>
+							<a target="_blank" title="Doodle Type Information for my Real Estate Business" href="http://www.slideshare.net/iprorand/listing-presentation-total-market-overview" class="notranslate doctitle ga-track-featured_slideshow">
+								<span class="imgWrapper"><img class="notranslate" width="120" alt="Doodle Type Information for my Real Estate Business" src="//cdn.slidesharecdn.com/ss_thumbnails/rand-120925181223-phpapp02-video-thumbnail-2.jpg?1348676282"></span>
+								<span class="notranslate">Doodle Type Information for my Rea…</span>
+							</a>
+						</li>
+					</ul>
 				</div>
 				<div class="span4" id="side">
-					<p>menu</p>
+					<p>dev menu</p>
+					<button class="btn btn-danger" id="clearLocalStorage">ローカルストレージ削除</button>
 				</div>
 			</div>
 		</div>
