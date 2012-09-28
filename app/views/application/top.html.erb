@@ -1,1 +1,10 @@
-slide train
+<h1>Checking Slides!</h1>
+<ul ng-controller="SlideListCtrl">
+  <li ng-repeat="slide in slides" id="{{slide.id}}">
+	<span class="close">x</span>
+	<a target="_blank" title="{{slide.title}}" href="{{slide.href}}">
+	  <img src="{{slide.img.src}}" />
+	  <span>{{slide.title}}</span>
+	</a>
+  </li>
+</ul>
