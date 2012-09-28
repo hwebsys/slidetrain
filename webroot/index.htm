@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="jp" ng-app>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Slide Train</title>
@@ -21,7 +21,10 @@
 
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/bootstrap-responsive.min"></script>
+
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+		<script src="js/controllers.js"></script>
+
 		<script src="js/top.js"></script>
 	</head>
 	<body>
@@ -35,7 +38,7 @@
 					</a>
 					<a href="/"><img src="img/logo.png" class="brand" style="width: 20px;" alt="" /></a>
 					<a href="/" class="brand">Slide Train</a>
-					<div class="nav-collapse">
+					<div class="nav-collapse none">
 						<ul class="nav">
 							<li class=""><a href="/users/setting/" style="display:inline;"><button class="btn" onClick="location.href='/users/setting/'"><i class="icon-cog"></i></button></a></li>
 							<li class="none"><a href="/users/logout/" style="display:inline;"><button class="btn" onClick="location.href='/users/logout/'"><i class="icon-off"></i> Logout</button></a></li>
@@ -51,19 +54,12 @@
 			<div class="row">
 				<div class="span8" id="main">
 					<h1>Checking Slides!</h1>
-					<ul>
-						<li id="slide1">
+					<ul ng-controller="SlideListCtrl">
+						<li ng-repeat="slide in slides" id="{{slide.id}}">
 							<span class="close">x</span>
-							<a target="_blank" title="5 Reasons Why Social Media Was Born For SMEs" href="http://www.slideshare.net/tomorrow_people/5-reasons-why-social-media-was-born-for-sm-es" class="notranslate doctitle ga-track-featured_slideshow">
-								<span class="imgWrapper"><img class="notranslate" width="120" alt="5 Reasons Why Social Media Was Born For SMEs" src="//cdn.slidesharecdn.com/ss_thumbnails/5reasonswhysocialmediawasbornforsmes-120925085917-phpapp02-thumbnail-2.jpg?1348649444"></span>
-								<span class="notranslate">5 Reasons Why Social Media Was Bor…</span>
-							</a>
-						</li>
-						<li id="slide2">
-							<span class="close">x</span>
-							<a target="_blank" title="Doodle Type Information for my Real Estate Business" href="http://www.slideshare.net/iprorand/listing-presentation-total-market-overview" class="notranslate doctitle ga-track-featured_slideshow">
-								<span class="imgWrapper"><img class="notranslate" width="120" alt="Doodle Type Information for my Real Estate Business" src="//cdn.slidesharecdn.com/ss_thumbnails/rand-120925181223-phpapp02-video-thumbnail-2.jpg?1348676282"></span>
-								<span class="notranslate">Doodle Type Information for my Rea…</span>
+							<a target="_blank" title="{{slide.title}}" href="{{slide.href}}">
+								<img src="{{slide.img.src}}" />
+								<span>{{slide.title}}</span>
 							</a>
 						</li>
 					</ul>

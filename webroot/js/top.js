@@ -6,30 +6,25 @@ $(function(){
 		location.reload();	
 	});
 
-	//console.log(localStorage.getItem('achieved'));
-
-	//保存してあるデータを取得
+	//ローカルから非表示リスト取得
 	var achieved = JSON.parse(localStorage.getItem('achieved'));
-	//console.log(typeof(achieved));
-
-	if (achieved !== null) {
-		//console.log('not empty'+achieved);
-		for ( var key in achieved ) {
-			//console.log( achieved[key] );
-			$('#' + achieved[key]).hide();
-		};
-	} else {
-		console.log('empty!');
+	if( !achieved ) {
 		achieved = new Array();
 	}
 
-	$("span.close").bind("click", function(){
-		//alert( $(this).closest('li').attr('id'));
-		$(this).closest('li').hide('slow');
-		achieved.push( $(this).closest('li').attr('id') );
-		localStorage.setItem('achieved', JSON.stringify(achieved));
+	//angularの読み込みが終わった後に処理。（正式な方法わからず）
+	var count = 500;//表示までの時間（ミリ秒）
+	setTimeout(function(){
 
-	});
+		//削除ボタン
+		$(".close").bind("click", function(){
+			//alert( $(this).closest('li').attr('id'));
+			$(this).closest('li').hide('slow');//非表示
+			achieved.push( $(this).closest('li').attr('id') );//非表示リストに追加
+			localStorage.setItem('achieved', JSON.stringify(achieved));//非表示リストをローカルに保存
+		});
+	}, count);
+
 
 
 });
