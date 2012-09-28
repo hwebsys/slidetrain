@@ -1,0 +1,10 @@
+.none {
+	display: none;
+}
+
+#main {
+	background: #EEE;
+}
+#side {
+	background: #FFE;
+}
