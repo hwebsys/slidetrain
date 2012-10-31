@@ -8,21 +8,18 @@ class HatenaLoader
     # buffer = open(Rails.root+"tmp/hoge.rss")
     require 'rss'
     rss = RSS::Parser.parse(buffer, true)
-    i = 0
     items = rss.items
     items.delete_if do |item|
       ! %r{^http://www.slideshare.net/}.match item.link
     end
-    sample_hash = rss.items.map do |item|
-      i = i+1
-      {
-        id: i.to_s,
-        title: item.title,
-        href: item.link,
-        img: {
-          src: "",
-        }
-      }
+    rss.items.each do |item|
+      slide = Slide.find_by_url(item.link)
+      if slide.nil?
+        Slide.create({title: item.title,
+                  url: item.link,
+                  image: "",
+                  })
+      end
     end
   end
 end

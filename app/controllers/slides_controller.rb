@@ -8,6 +8,7 @@ class SlidesController < ApplicationController
     response = slides.map do |slide|
       {
         id: slide.id,
+        href: slide.url,
         title: slide.title,
         image: {
           src: slide.image,
