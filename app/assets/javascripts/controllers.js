@@ -1,7 +1,7 @@
 function SlideListCtrl($scope, $http) {
   //jsonpの取得用URI
   //var here = location.href.replace('/', '');
-  here = location.href;
+  var here = location.href;
   var uri = here + 'jsonsample.json'
   //var uri ='http://search.twitter.com/search.json?q=yuu'
       + '?callback=JSON_CALLBACK';
