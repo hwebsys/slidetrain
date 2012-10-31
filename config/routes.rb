@@ -1,4 +1,4 @@
 Slidetrain::Application.routes.draw do
-  root to: "application#top"
-  get :jsonsample, to: 'application#jsonsample'
+  root to: "top#index"
+  resources :slides, only: [:index]
 end
