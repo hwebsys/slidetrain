@@ -13,7 +13,7 @@ $(function(){
 	}
 
 	//angularの読み込みが終わった後に処理。（正式な方法わからず）
-	var count = 500;//表示までの時間（ミリ秒）
+	var count = 1500;//表示までの時間（ミリ秒）
 	setTimeout(function(){
 
 		//削除ボタン

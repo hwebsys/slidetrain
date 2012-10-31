@@ -1,10 +1,17 @@
 <h1>Checking Slides!</h1>
-<ul ng-controller="SlideListCtrl">
+<ul ng-controller="SlideListCtrl" class="unstyled" id="slidelist">
   <li ng-repeat="slide in slides" id="{{slide.id}}">
 	<span class="close">x</span>
 	<a target="_blank" title="{{slide.title}}" href="{{slide.href}}">
-	  <img src="{{slide.img.src}}" />
-	  <span>{{slide.title}}</span>
+		<dl>
+			<dt>
+				<img src="http://cdn.slidesharecdn.com/ss_thumbnails/5reasonswhysocialmediawasbornforsmes-120925085917-phpapp02-thumbnail-2.jpg?1348649444" />
+				<!--<img src="{{slide.img.src}}" />-->
+			</dt>
+			<dd>
+				<span>{{slide.title}}</span>
+			</dd>
+		</dl>
 	</a>
   </li>
 </ul>

@@ -35,17 +35,17 @@
 					<a href="/" class="brand">Slide Train</a>
 					<div class="nav-collapse">
 						<ul class="nav">
-							<li class=""><a href="/users/setting/" style="display:inline;"><button class="btn" onClick="location.href='/users/setting/'"><i class="icon-cog"></i></button></a></li>
+							<li class="none"><a href="/users/setting/" style="display:inline;"><button class="btn" onClick="location.href='/users/setting/'"><i class="icon-cog"></i></button></a></li>
 							<li class="none"><a href="/users/logout/" style="display:inline;"><button class="btn" onClick="location.href='/users/logout/'"><i class="icon-off"></i> Logout</button></a></li>
-							<li class=""><a href="/users/registerSendMail/" style="display:inline;"><button class="btn" onClick="location.href='/users/registerSendMail/'"><i class="icon-user"></i> 新規登録</button></a></li>
-							<li class=""><a href="/users/login/" style="display:inline;"><button class="btn" onClick="location.href='/users/login/'"><i class="icon-ok-sign"></i> Login</button></a></li>
+							<li class="none"><a href="/users/registerSendMail/" style="display:inline;"><button class="btn" onClick="location.href='/users/registerSendMail/'"><i class="icon-user"></i> 新規登録</button></a></li>
+							<li class="none"><a href="/users/login/" style="display:inline;"><button class="btn" onClick="location.href='/users/login/'"><i class="icon-ok-sign"></i> Login</button></a></li>
 						</ul>
 					</div><!--/.nav-collapse -->
 
 				</div>
 			</div>
 		</div>
-		<div class="container" style="margin-top:50px;">
+		<div class="container mt20">
 			<div class="row">
 				<div class="span8" id="main">
                   <%= yield %>
@@ -53,6 +53,11 @@
 				<div class="span4" id="side">
 					<p>dev menu</p>
                     <button class="btn btn-danger" id="clearLocalStorage">ローカルストレージ削除</button>
+				</div>
+			</div>
+			<div id="hooter" class="row">
+				<div class="span12">
+					<a href="">about us</a>
 				</div>
 			</div>
 		</div>
