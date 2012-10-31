@@ -1,10 +1,47 @@
 .none {
 	display: none;
 }
+.mt50 {
+	margin-top: 50px;
+}
+.mt20 {
+	margin-top: 20px;
+}
+.mb50 {
+	margin-bottom: 50px;
+}
+.mb20 {
+	margin-bottom: 20px;
+}
 
+body {
+	background: #F8F8F8;
+}
 #main {
-	background: #EEE;
 }
 #side {
 	background: #FFE;
+}
+
+ul#slidelist {
+}
+ul#slidelist li{
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
+	@include box-shadow( rgba( 255, 255, 255, .1) 0 1px 0);
+}
+h1 {
+	text-shadow: -1px 1px 0 rgba(255, 255, 255, 1);
+}
+dl {
+	clear: left;
+	min-height: 92px;
+	margin:0;
+}
+dt {
+	clear: left;
+	float: left;
+}
+dd {
+	margin-left: 120px;
+	padding: 8px;
 }
