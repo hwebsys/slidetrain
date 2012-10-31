@@ -20,7 +20,7 @@ $(function(){
 		$(".close").bind("click", function(){
 			//alert( $(this).closest('li').attr('id'));
 			$(this).closest('li').hide('slow');//非表示
-			achieved.push( $(this).closest('li').attr('id') );//非表示リストに追加
+			achieved.push( Number($(this).closest('li').attr('id')) );//非表示リストに追加
 			localStorage.setItem('achieved', JSON.stringify(achieved));//非表示リストをローカルに保存
 		});
 	}, count);
