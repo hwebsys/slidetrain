@@ -7,24 +7,30 @@ class ApplicationController < ActionController::Base
   end
 
   def jsonsample
-    sample_hash = [
-                   {
-                     'id' => 'slide1',
-                     'title' => '5 Reasons Why Social Media Was Born For SMEs',
-                     'href' => 'http://www.slideshare.net/tomorrow_people/5-reasons-why-social-media-was-born-for-sm-es',
-                     'img' => {
-                       'src' => '//cdn.slidesharecdn.com/ss_thumbnails/5reasonswhysocialmediawasbornforsmes-120925085917-phpapp02-thumbnail-2.jpg?1348649444',
-                     },
-                   },
-                   {
-                     'id' => 'slide2',
-                     'title' => 'Doodle Type Information for my Real Estate Business',
-                     'href' => 'http://www.slideshare.net/iprorand/listing-presentation-total-market-overview',
-                     'img' => {
-                       'src' => '//cdn.slidesharecdn.com/ss_thumbnails/rand-120925181223-phpapp02-video-thumbnail-2.jpg?1348676282',
-                     },
-                   },
-                  ]
+    require 'open-uri'
+    url = "http://b.hatena.ne.jp/search/text?q=Slideshare%7CSpeakerDeck&users=5&sort=recent&mode=rss"
+    buffer = open(url).read
+    # なんどもHTTPアクセスしたくない場合(開発用)
+    # $ wget http://b.hatena.ne.jp/search/text?q=Slideshare%7CSpeakerDeck&users=5&sort=recent&mode=rss -O tmp/hoge.rss
+    # buffer = open(Rails.root+"tmp/hoge.rss")
+    require 'rss'
+    rss = RSS::Parser.parse(buffer, true)
+    i = 0
+    items = rss.items
+    items.delete_if do |item|
+      ! %r{^http://www.slideshare.net/}.match item.link
+    end
+    sample_hash = rss.items.map do |item|
+      i = i+1
+      {
+        id: i.to_s,
+        title: item.title,
+        href: item.link,
+        img: {
+          src: "",
+        }
+      }
+    end
     respond_with sample_hash.to_json, :callback => params[:callback]
   end
 end
