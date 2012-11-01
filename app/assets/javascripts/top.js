@@ -24,8 +24,5 @@ $(function(){
 			localStorage.setItem('achieved', JSON.stringify(achieved));//非表示リストをローカルに保存
 		});
 	}, count);
-
-
-
 });
 
