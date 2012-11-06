@@ -24,5 +24,18 @@ $(function(){
 			localStorage.setItem('achieved', JSON.stringify(achieved));//非表示リストをローカルに保存
 		});
 	}, count);
+
+	//topの説明部分の非表示処理
+	$(".close").bind("click", function(){
+		$(this).closest('#topmessage').hide('slow');//非表示
+		achieved.push( 'topmessage' );//非表示リストに追加
+		localStorage.setItem('achieved', JSON.stringify(achieved));//非表示リストをローカルに保存
+	});
+	//topの説明部分で、非表示が保存済みなら隠す
+	console.log( achieved );
+	if($.inArray('topmessage', achieved) != -1) {
+		$( '#topmessage' ).hide();
+	}
+	
 });
 
