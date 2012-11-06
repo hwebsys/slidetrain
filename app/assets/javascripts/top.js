@@ -32,7 +32,6 @@ $(function(){
 		localStorage.setItem('achieved', JSON.stringify(achieved));//非表示リストをローカルに保存
 	});
 	//topの説明部分で、非表示が保存済みなら隠す
-	console.log( achieved );
 	if($.inArray('topmessage', achieved) != -1) {
 		$( '#topmessage' ).hide();
 	}
