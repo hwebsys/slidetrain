@@ -14,7 +14,7 @@ function SlideListCtrl($scope, $http) {
 		//複数データをチェック
 		for( var key in data) {
 		  //非表示リストに入っていなければ
-		  if($.inArray(data[key]['id'], achieved) == -1) {
+		  if($.inArray(Number(data[key]['id']), achieved) == -1) {
 			//出力データに追加
 			result.push( data[key] );
 		  }
